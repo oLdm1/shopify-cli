@@ -22,6 +22,7 @@ module Script
           end
 
           def build
+            # raise Errors::WebAssemblyBinaryNotFoundError
             raise Errors::WebAssemblyBinaryNotFoundError unless ctx.file_exist?(BYTECODE_FILE)
             ctx.binread(BYTECODE_FILE)
           end

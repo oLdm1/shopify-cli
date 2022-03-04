@@ -158,9 +158,9 @@ module Script
 
         class ScriptProjectAlreadyExistsError < ScriptProjectError; end
         class TaskRunnerNotFoundError < ScriptProjectError; end
-        class BuildScriptNotFoundError < ScriptProjectError; end
+        class BuildScriptNotFoundError < BuildError; end
 
-        class WebAssemblyBinaryNotFoundError < ScriptProjectError
+        class WebAssemblyBinaryNotFoundError < BuildError
           def initialize
             super("WebAssembly binary not found")
           end
